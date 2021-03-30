@@ -63,7 +63,7 @@ const sumOfAListOfElements = function (listOfElements) {
   return accumulator
 }
 
-const sumOfAListOfElements = function (listOfElements) {
+const sumOfAListOfElements2 = function (listOfElements) {
   let accumulator = 0
   for (let i = 0; i < listOfElements.length; i++) {
     const currentElement = listOfElements[i]

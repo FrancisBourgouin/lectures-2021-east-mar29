@@ -1,0 +1,25 @@
+<%- include('partials/_head.ejs') %>
+
+	<section>
+		<p>How do you know that a mathematician planted a tree?</p>
+		<% if(currentUser){ %>
+			<p>It has square roots</p>
+			<% } %>
+	</section>
+	<% if(!currentUser){ %>
+		<section>
+			<form action="/login" method="POST">
+				<input type="text" name="email" placeholder="Enter your email">
+				<input type="password" name="password" placeholder="Enter your password">
+				<button type="submit">Log in!</button>
+			</form>
+			<p>Oh you don't have an account, <a href="/register">register here!</a></p>
+		</section>
+		<% } %>
+
+			<% if(currentUser){ %>
+				<form action="/logout" method="POST"><button type="submit">LOGOUT</button></form>
+				<% } %>
+					</body>
+
+					</html>

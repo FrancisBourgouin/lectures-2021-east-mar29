@@ -1,0 +1,52 @@
+*{
+  box-sizing: border-box;
+}
+html, body{
+  margin:0;
+  padding:0;
+}
+body{
+  font-family: 'Noto Sans', sans-serif;
+  font-size:20px;
+  width:100%;
+}
+h1{
+  margin:0;
+  padding:1em;
+  background:black;
+  color:white;
+  font-family: 'Zen Dots', cursive;
+  text-align:center;
+  text-transform: uppercase;
+}
+p{
+  padding:0.25em;
+  max-width:70ch;
+  margin:1em auto;
+}
+
+section.images{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: space-evenly;
+  /* flex-direction:column; */
+}
+section.images img{
+  margin:0.1em 0;
+  width:100%;
+  height:auto;
+}
+
+@media screen and (min-width:1000px){
+  section.images img{
+    width:45%;
+    margin:1em 0;
+  }
+}
+
+@media screen and (min-width:1500px){
+  section.images img{
+    width:30%;
+    margin:1em 0;
+  }
+}

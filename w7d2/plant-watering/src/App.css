@@ -1,0 +1,33 @@
+.App {
+  text-align: center;
+}
+
+.PlantList main{
+  display:flex;
+  justify-content: space-between;
+  flex-wrap:wrap;
+}
+.PlantList main article{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size:2em;
+  margin:2rem;
+  border:0.2rem solid green;
+  width:40vmin;
+  height:40vmin;
+}
+.PlantList main article h1, .PlantList main article h2 {
+  margin:0;
+}
+button{
+  font-size:2rem;
+}
+.PlantList main article:last-of-type{
+  margin-right:auto;
+}
+
+form, input{
+  font-size:2em;
+}

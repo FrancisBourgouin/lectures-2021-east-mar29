@@ -1,62 +1,51 @@
-# Weather app!
+# Weather App!
 
-- Fetch the weather
-- Show the weather for a specific city
-- Cities can be clicked to show the weather
+## Pitch
 
-# Horribly crude skeleton
+Show the current weather of a city, have a search field to search the city. Create buttons for previously searched cities
 
-body
-  h1 title
+## Structure
+
+div
   section
-    h1 current weather for cityname
-    h2 value of temp
-    h3 conditions
+    h1 city name
+    p temperature
+    p condition
   section
-    button city a
-    button city b
-    button city c
+    form
+      input (city name)
+      button submit
+  section
+    buttons ?
 
-# Components
+## Data structure
 
-- App (currentCity: String [State], currentWeather: Object [State])
-- Weather (parsedTemp: String, currentCity: String, condition: String)
-- CityButtonList (listOfCity: Array, currentCity: String)
-- CityButtonListItem (cityName: String, selected: Boolean, setCurrentCity: Function)
+weatherData: {...} -> API (Weather)
+currentCity: "" -> User input
+cities: ["",""] -> App
+formData: "" -> CityForm
 
-# Helpers
+## Components
 
-- kelvinToCelsiusConverter
-- formatWeather
+App (state: currentCity, cities)
+  Weather (state: weatherData)
+  CityForm (state: formData)
+  CityButtons
+    CityButton
 
-# Tests
+## Helper functions?
 
-## Unit test
+Fetch the weather (axios)
+convert kelvin to celsius
 
-- kelvinToCelsiusConverter
-  - should return null if temp is invalid
-  - should return null if temp is under 0
-  - should return 0 if temp is 273.15
-  - should reutnr -10 if temp is 263.15
 
-- formatWeather
-  - should return null if temp is invalid
-  - should return '0°C' if given 0
-  - should return '-10°C' if given -10
+## Testing!
 
-## Integration tests
+### Unit
 
-- Weather
-  - should show nothing if there is no currentCity
-  - should show a message if the is a currentCity but no weatherData
-  - should show the name of the city, the temperature and condition if the data is valid
+Mostly helpers, conversion, fetchWeather
 
-- CityButtonList
-  - should show nothing if there is no listOfCity given
-  - should show a list of button if there is a list of city given
+### Feature
 
-- CityButtonListItem
-  - should show nothing is there is no city name
-  - should show the name of the city if given a city name
-  - should have a special class if it is selected 
-  - should do an action when clicked
+Type city in input, see weather
+Type bad city in input, don't see weather
